@@ -1,0 +1,6 @@
+mutation draftOrderCreate($input: DraftOrderInput!) {
+  draftOrderCreate(input: $input) {
+    draftOrder { id name }
+    userErrors { field message }
+  }
+}

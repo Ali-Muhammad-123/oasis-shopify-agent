@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: oasis
+      POSTGRES_PASSWORD: oasis
+      POSTGRES_DB: oasis
+    ports:
+      - "5433:5432"
+    volumes:
+      - oasis-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U oasis"]
+      interval: 2s
+      retries: 20
+
+volumes:
+  oasis-db:

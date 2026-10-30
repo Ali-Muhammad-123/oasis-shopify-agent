@@ -1,0 +1,6 @@
+mutation orderCancel($orderId: ID!, $refundMethod: OrderCancelRefundMethodInput) {
+  orderCancel(orderId: $orderId, reason: CUSTOMER, restock: true, notifyCustomer: false, refundMethod: $refundMethod) {
+    job { id }
+    orderCancelUserErrors { field message }
+  }
+}

@@ -1,0 +1,8 @@
+query lookup {
+  shop { currencyCode }
+  locations(first: 5) { nodes { id name } }
+  products(first: 100, query: "status:active") {
+    nodes { title variants(first: 10) { nodes { id price inventoryPolicy inventoryItem { tracked } } } }
+  }
+  customers(first: 100) { nodes { id defaultEmailAddress { emailAddress } } }
+}

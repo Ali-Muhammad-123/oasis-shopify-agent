@@ -1,0 +1,8 @@
+{
+  "name": "oasis-shopify-app",
+  "private": true,
+  "scripts": {
+    "deploy": "shopify app deploy",
+    "info": "shopify app info"
+  }
+}

@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* Light-only for now. Chart roles use the dataviz reference palette (validated categorical order). */
+:root {
+  color-scheme: light;
+  --background: #f9f9f7;
+  --foreground: #0b0b0b;
+
+  --viz-surface: #fcfcfb;
+  --viz-text-primary: #0b0b0b;
+  --viz-text-secondary: #52514e;
+  --viz-muted: #898781;
+  --viz-grid: #e1e0d9;
+  --viz-axis: #c3c2b7;
+  --viz-delta-up: #006300;
+  --viz-delta-down: #d03b3b;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  --series-6: #008300;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Dashboard grid: snap placeholder and resize handles. */
+.oasis-grid .react-grid-placeholder {
+  background: rgba(42, 120, 214, 0.18);
+  border: 1px dashed rgba(42, 120, 214, 0.6);
+  border-radius: 12px;
+  opacity: 1;
+}
+.oasis-grid .react-grid-item.react-draggable-dragging,
+.oasis-grid .react-grid-item.resizing {
+  z-index: 3;
+  box-shadow: 0 12px 28px rgba(11, 11, 11, 0.12);
+  border-radius: 12px;
+}
+.oasis-grid .react-grid-item > .react-resizable-handle {
+  opacity: 0;
+  transition: opacity 120ms;
+}
+.oasis-grid .react-grid-item:hover > .react-resizable-handle,
+.oasis-grid .react-grid-item.resizing > .react-resizable-handle {
+  opacity: 1;
+}
+
+/* Print / "Save as PDF": hide app chrome and let content flow across pages. */
+@media print {
+  aside, .no-print, form, .react-resizable-handle { display: none !important; }
+  html, body, main, main > div { height: auto !important; overflow: visible !important; background: #fff !important; }
+  .oasis-grid .react-grid-item { break-inside: avoid; }
+  .print-expand { overflow: visible !important; flex: none !important; }
+  .h-dvh, .h-full { height: auto !important; }
+  section { break-inside: avoid; }
+}

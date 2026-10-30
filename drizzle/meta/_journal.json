@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793243302388,
+      "tag": "0000_solid_umar",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793247463743,
+      "tag": "0001_married_abomination",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793297064482,
+      "tag": "0002_dazzling_mister_sinister",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793299866243,
+      "tag": "0003_fine_ser_duncan",
+      "breakpoints": true
+    }
+  ]
+}

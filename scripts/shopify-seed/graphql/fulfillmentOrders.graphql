@@ -1,0 +1,5 @@
+query fulfillmentOrders($id: ID!) {
+  order(id: $id) {
+    fulfillmentOrders(first: 5) { nodes { id status } }
+  }
+}

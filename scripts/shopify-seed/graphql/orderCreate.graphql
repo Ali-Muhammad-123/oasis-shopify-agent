@@ -1,0 +1,6 @@
+mutation orderCreate($order: OrderCreateOrderInput!, $options: OrderCreateOptionsInput) {
+  orderCreate(order: $order, options: $options) {
+    order { id name displayFinancialStatus displayFulfillmentStatus }
+    userErrors { field message }
+  }
+}
